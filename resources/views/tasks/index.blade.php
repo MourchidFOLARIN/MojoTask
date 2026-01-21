@@ -18,18 +18,11 @@
 
             {{-- Header Section --}}
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10">
-                <div>
-                    <h1 class="text-3xl font-extrabold text-gray-900 tracking-tight">Tableau de bord</h1>
-                    <p class="text-gray-500 mt-1">Gérez vos priorités et suivez votre progression.</p>
-                </div>
                 <div class="flex flex-row justify-center items-center">
-                    <a href="{{ route('tasks.create') }}"
-                        class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-semibold rounded-xl text-white bg-blue-600 hover:bg-blue-700 shadow-lg shadow-blue-200 transition-all active:scale-95">
-                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
-                        </svg>
-                        Nouvelle tâche
-                    </a>
+                    <div>
+                        <h1 class="text-3xl font-extrabold text-gray-900 tracking-tight">Tableau de bord</h1>
+                        <p class="text-gray-500 mt-1">Gérez vos priorités et suivez votre progression.</p>
+                    </div>
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf
                         <button type="submit" class="text-gray-500 hover:text-red-700">
@@ -43,6 +36,16 @@
                             </svg>
                         </button>
                     </form>
+                </div>
+                <div>
+                    <a href="{{ route('tasks.create') }}"
+                        class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-semibold rounded-xl text-white bg-blue-600 hover:bg-blue-700 shadow-lg shadow-blue-200 transition-all active:scale-95">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                        </svg>
+                        Nouvelle tâche
+                    </a>
+
 
                 </div>
             </div>
