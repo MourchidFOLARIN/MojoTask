@@ -27,4 +27,4 @@ Schedule::call(function () {
         ]);
     }
     
-})->everyMinute();
+})->hourly();
