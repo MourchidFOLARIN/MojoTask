@@ -21,7 +21,7 @@
                 <div class="flex flex-col sm:flex-row gap-4 mt-4">
                     <a href="{{ route('tasks.index') }}"
                         class="bg-green-600 text-white px-6 py-3 rounded-full text-center font-semibold hover:bg-green-700 transition">
-                        Voir vos tâches
+                        Voir mes tâches
                     </a>
                     <a href="{{ route('register') }}"
                         class="bg-green-600 text-white px-6 py-3 text-center rounded-full font-semibold hover:bg-green-700 transition">
@@ -51,7 +51,7 @@
             <div class="p-6 border rounded-lg shadow hover:shadow-lg transition">
                 <div class="text-2xl mb-3 flex justify-center items-center"><img src="images/mail (1).svg" alt="" class="w-1/5 "></div>
                 <h3 class="font-semibold text-lg mb-2 text-orange-500">Rappel par email</h3>
-                <p class="text-gray-600">Si vous oubliez une tâche, vous recevrez un rappel automatique par email.</p>
+                <p class="text-gray-600">Si vous oubliez une tâche, vous recevrez un rappel automatique par email et par whatsapp.</p>
             </div>
 
             <div class="p-6 border rounded-lg shadow hover:shadow-lg transition">
@@ -84,11 +84,8 @@
                     <div id="bad-slider" class="flex transition-transform duration-700">
                         @php
                             $badImages = [
-                                ['img' => 'images/photo-1521737604893-d14cc237f11d.jpeg', 'text' => 'Trop de choses à faire, rien n’est fait'],
-                                ['img' => 'images/photo-1506784983877-45594efa4cbe.jpeg', 'text' => 'Stress constant et manque de concentration'],
-                                ['img' => 'images/photo-1507537297725-24a1c029d3ca.jpeg', 'text' => 'Objectifs abandonnés en cours de route'],
-                                ['img' => 'images/photo-1517245386807-bb43f82c33c4.jpeg', 'text' => 'Retards répétés et perte de motivation'],
-                                ['img' => 'images/photo-1522071820081-009f0129c71c.jpeg', 'text' => 'Journées épuisantes sans résultats'],
+                                ['img' => 'images/7f31c149aa38bc5ff3b667fae5024107.jpg', 'text' => 'Trop de choses à faire, rien n’est fait'],
+                                ['img' => 'images/26384594c00a7f4b3b194e0d523c595c.jpg', 'text' => 'Stress constant et manque de concentration'],
                             ];
                             shuffle($badImages);
                         @endphp
@@ -118,11 +115,9 @@
                     <div id="good-slider" class="flex transition-transform duration-700">
                         @php
                             $goodImages = [
-                                ['img' => 'https://images.unsplash.com/photo-1521737604893-2d5f7d24b1c4', 'text' => 'Chaque tâche est claire et planifiée'],
-                                ['img' => 'images/photo-1522202176988-66273c2fd55f.jpeg', 'text' => 'Productivité et sérénité au quotidien'],
-                                ['img' => 'images/photo-1519389950473-47ba0277781c.jpeg', 'text' => 'Objectifs atteints, étape par étape'],
-                                ['img' => 'images/photo-1521791055366-0d553872125f.jpeg', 'text' => 'Moins de stress, plus de résultats'],
-                                ['img' => 'images/photo-1504384308090-c894fdcc538d.jpeg', 'text' => 'La satisfaction de tout accomplir'],
+                                ['img' => 'images/a61915ea604d2b3aaf052217a5f143d7.jpg', 'text' => 'Chaque tâche est claire et planifiée'],
+                                ['img' => 'images/2f18598373ad54dbf5f7024aca9ecfd1.jpg', 'text' => 'Productivité et sérénité au quotidien'],
+                                
                             ];
                             shuffle($goodImages);
                         @endphp

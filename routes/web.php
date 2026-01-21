@@ -19,6 +19,7 @@ Route::middleware('auth')->controller(TasksController::class)
         Route::put('/tasks/{task}', 'update')->name('tasks.update');
         Route::put('/tasks/{task}/completed', 'completed')->name('tasks.completed');
         Route::get('/tasks/{task}/show', 'show')->name('tasks.show');
+        Route::post('/logout','logout')->name('logout');
         });
         Route::get('/test-mail', function () {
         $task = Task::whereHas('reminder', function($query) {

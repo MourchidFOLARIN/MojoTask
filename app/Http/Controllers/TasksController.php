@@ -52,7 +52,7 @@ class TasksController extends Controller
             'due_date'        => $request->due_date,
             'priority'        => $request->priority,
             'reminder'        => $request->has('reminder'),
-            'whatsapp_number' => $request->whatsapp_number, 
+            'whatsapp_number' => $request->whatsapp_number,
         ]);
         if ($request->has('reminder')) {
             TaskReminder::create([
@@ -114,4 +114,15 @@ class TasksController extends Controller
         }
         return view('tasks.show', compact('task'));
     }
+    public function logout(Request $request)
+    {
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/');
+    }
+    
 }
