@@ -41,3 +41,9 @@ Route::middleware('auth')->controller(TasksController::class)
         Route::get('/register', 'register')->name('register');
         Route::post('/login', 'loginPost')->name('login.post');
     });
+Route::get('/clear-all', function() {
+    \Illuminate\Support\Facades\Artisan::call('config:clear');
+    \Illuminate\Support\Facades\Artisan::call('cache:clear');
+    \Illuminate\Support\Facades\Artisan::call('view:clear');
+    return "Le cache est vidé ! Réessaie le test-mail maintenant.";
+});
