@@ -1,11 +1,19 @@
 <?php
-use App\Mail\TaskReminderMail;
 use App\Models\Task;
+use App\Mail\TaskReminderMail;
 use Illuminate\Support\Facades\Mail;
-use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\TasksController;
+;
 
+Route::get('/test-direct', function () {
+    Mail::raw('Ceci est un test en direct', function ($message) {
+        $message->to('mourchidolawale@gmail.com')
+                ->subject('Test Log');
+    });
+    return "Le mail a été envoyé au système de log !";
+});
 Route::get('/', function () {
     return view('public.todo');
 })->name('home');
