@@ -1,12 +1,16 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Task;
 use App\Models\User;
 use App\Models\TaskReminder;
 use Illuminate\Http\Request;
+use Illuminate\Mail\Mailable;
+use App\Mail\TaskReminderMail;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Mail\Mailables\Content;
+use Illuminate\Mail\Mailables\Envelope;
 
 class TasksController extends Controller
 {
@@ -60,6 +64,7 @@ class TasksController extends Controller
                 'enabled' => true,
             ]);
         }
+        Mail::to(auth()->user()->email)->send(new TaskReminderMail($task));
 
         return to_route('tasks.create')->with('success', 'Votre tâche a été ajoutée avec succès !');
     }
@@ -81,7 +86,7 @@ class TasksController extends Controller
     public function update(Request $request, Task $task)
     {
         $data = $request->validate([
-            'title' => 'required',
+            'title'         => 'required',
             'priority'      => 'required|in:low,medium,high',
             'due_date'      => 'nullable|date',
         ]);
