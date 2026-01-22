@@ -1,6 +1,6 @@
 @extends('layouts.auth')
 
-@section('title', 'Inscription - MojoTask')
+@section('title', 'Inscription - Task Manager')
 
 @section('content')
 <div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-green-50 to-blue-50 px-4 py-12">
@@ -11,7 +11,7 @@
             <h2 class="text-3xl font-extrabold text-blue-500 tracking-tight">
                 Rejoignez-nous pour ne plus procrastinatiner !
             </h2>
-            <p class="text-gray-500 mt-2">Créez votre compte <span class="text-orange-500 font-bold">MojoTask</span></p>
+            <p class="text-gray-500 mt-2">Créez votre compte <span class="text-orange-500 font-bold">Task Manager</span></p>
         </div>
 
         {{-- Message d’erreur global --}}

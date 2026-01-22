@@ -1,6 +1,6 @@
 @extends('layouts.auth')
 
-@section('title', 'Connexion - MojoTask')
+@section('title', 'Connexion - Task Manager')
 
 @section('content')
 <div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-gray-100 px-4">
@@ -11,7 +11,7 @@
             <h2 class="text-3xl font-extrabold text-blue-500 tracking-tight">
                 Bon retour !
             </h2>
-            <p class="text-gray-500 mt-2">Connectez-vous à <span class="text-orange-500 font-bold">MojoTask</span></p>
+            <p class="text-gray-500 mt-2">Connectez-vous à <span class="text-orange-500 font-bold">Task Manager</span></p>
         </div>
         
         {{-- Message d’erreur global --}}

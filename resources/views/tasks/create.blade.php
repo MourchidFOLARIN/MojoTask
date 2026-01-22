@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Nouvelle tâche - MojoTask')
+@section('title', 'Nouvelle tâche - Task Manager')
 
 @section('content')
     <div class="min-h-screen bg-gray-50 py-12 px-4">
@@ -53,7 +53,7 @@
                             Titre de la tâche
                         </label>
                         <input type="text" name="title" value="{{ old('title') }}"
-                            placeholder="Ex: Préparer le projet Laravel..."
+                            placeholder="Ex: Préparer le projet ..."
                             class="w-full px-5 py-4 rounded-2xl border-gray-200 bg-gray-50 focus:bg-white focus:ring-4 focus:ring-blue-400 focus:border-blue-500 outline-none transition-all @error('title') border-red-500 @enderror">
                         @error('title')
                             <p class="text-sm text-red-500 mt-2 flex items-center gap-1 italic">⚠️ {{ $message }}</p>

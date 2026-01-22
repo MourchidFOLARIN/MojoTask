@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Modifier la tâche - MojoTask')
+@section('title', 'Modifier la tâche - Task Manager')
 
 @section('content')
     <div class="min-h-screen bg-gray-50 py-12 px-4">
