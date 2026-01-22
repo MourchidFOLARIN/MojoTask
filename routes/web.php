@@ -9,16 +9,13 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\TasksController;
 
 Route::get('/test-direct', function () {
-    // On force le driver 'log' ici pour ignorer le fichier .env
-    Config::set('mail.default', 'log');
+    // Ceci écrit directement dans les logs noirs de Railway
+    error_log("++++++++++++++++++++++++++++++++++++++++++");
+    error_log("TEST REUSSI : LE SERVEUR PEUT ECRIRE ICI !");
+    error_log("++++++++++++++++++++++++++++++++++++++++++");
     
-    Mail::raw('Ceci est un test de force brute', function ($message) {
-        $message->to('mourchidolawale@gmail.com')
-                ->subject('Test Force Log');
-    });
-    
-    return "Si cette page s'affiche, regarde tes logs Railway TOUT DE SUITE !";
-});;
+    return "Regarde tes logs Railway maintenant, tu dois voir des lignes avec des ++++";
+});
 Route::get('/', function () {
     return view('public.todo');
 })->name('home');
