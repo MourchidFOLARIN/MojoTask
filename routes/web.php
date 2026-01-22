@@ -3,17 +3,22 @@ use App\Models\Task;
 use App\Mail\TaskReminderMail;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Config;
 use App\Http\Controllers\AuthController;
+
 use App\Http\Controllers\TasksController;
-;
 
 Route::get('/test-direct', function () {
-    Mail::raw('Ceci est un test en direct', function ($message) {
+    // On force le driver 'log' ici pour ignorer le fichier .env
+    Config::set('mail.default', 'log');
+    
+    Mail::raw('Ceci est un test de force brute', function ($message) {
         $message->to('mourchidolawale@gmail.com')
-                ->subject('Test Log');
+                ->subject('Test Force Log');
     });
-    return "Le mail a été envoyé au système de log !";
-});
+    
+    return "Si cette page s'affiche, regarde tes logs Railway TOUT DE SUITE !";
+});;
 Route::get('/', function () {
     return view('public.todo');
 })->name('home');
